@@ -1,20 +1,22 @@
+<img width="1852" height="987" alt="image" src="https://github.com/user-attachments/assets/c5d21258-5448-408f-8f00-df71b7b8f9ae" />
+
 # Reservation & Inventory System
 
-A full-stack reservation and inventory management app built with **React, TypeScript, Spring Boot, and PostgreSQL**.
+A full-stack reservation and inventory management app built with React, TypeScript, Spring Boot, and PostgreSQL.
 
-The main engineering focus is preventing **overselling / double booking** using database transactions and pessimistic row locking.
+The main engineering focus is preventing overselling / double booking using database transactions and pessimistic row locking.
 
 ## Live Demo
 https://reservation-system-ten-black.vercel.app/
 
 ## Tech Stack
 
-- **Frontend:** React, TypeScript, Vite
-- **Backend:** Java 17, Spring Boot, Spring Data JPA
-- **Database:** PostgreSQL
-- **Testing:** JUnit, Mockito, MockMvc
-- **DevOps:** Docker, Docker Compose, GitHub Actions
-- **Deployment:** Railway, Vercel
+- Frontend: React, TypeScript, Vite
+- Backend: Java 17, Spring Boot, Spring Data JPA
+- Database: PostgreSQL
+- Testing: JUnit, Mockito, MockMvc
+- DevOps: Docker, Docker Compose, GitHub Actions
+- Deployment: Railway, Vercel
 
 ## Key Features
 
@@ -41,10 +43,6 @@ CONFIRMED  CANCELLED
              v
         STOCK RESTORED
 ```
-
-Stock is deducted when a reservation is created as `PENDING`.
-
-Confirming does not deduct stock again. Cancelling restores the reserved quantity.
 
 ## API Endpoints
 
@@ -102,7 +100,7 @@ cd backend
 mvn test
 ```
 
-The backend currently includes **18 automated unit and web-layer tests**.
+The backend currently includes 18 automated unit and web-layer tests
 
 ## CI
 
