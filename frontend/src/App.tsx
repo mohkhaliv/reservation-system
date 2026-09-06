@@ -166,15 +166,12 @@ function App() {
     <main className="app">
       <header className="hero">
         <div>
-          <p className="eyebrow">
-            Reservation & Inventory System
-          </p>
           <h1>
-            Inventory-aware reservation management.
+            Reservation & Inventory Management
           </h1>
           <p className="subtitle">
             Spring Boot, PostgreSQL and React with
-            transactional stock management.
+            transactional stock management
           </p>
         </div>
       </header>
