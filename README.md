@@ -4,6 +4,9 @@ A full-stack reservation and inventory management app built with **React, TypeSc
 
 The main engineering focus is preventing **overselling / double booking** using database transactions and pessimistic row locking.
 
+## Live Demo
+https://reservation-system-ten-black.vercel.app/
+
 ## Tech Stack
 
 - **Frontend:** React, TypeScript, Vite
