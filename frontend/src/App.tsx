@@ -31,8 +31,6 @@ function App() {
 
   async function loadData() {
     try {
-      setLoading(true);
-
       const [productData, reservationData] =
         await Promise.all([
           getProducts(),
@@ -61,9 +59,35 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    loadData();
-  }, []);
+useEffect(() => {
+  let cancelled = false;
+
+  Promise.all([getProducts(), getReservations()])
+    .then(([productData, reservationData]) => {
+      if (cancelled) return;
+
+      setProducts(productData);
+      setReservations(reservationData);
+
+      setSelectedProductId((prev) =>
+        prev || (productData.length > 0 ? String(productData[0].id) : "")
+      );
+    })
+    .catch((err) => {
+      if (cancelled) return;
+
+      setError(
+        err instanceof Error ? err.message : "Failed to load data"
+      );
+    })
+    .finally(() => {
+      if (!cancelled) setLoading(false);
+    });
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
 
   async function handleCreateProduct(
     event: FormEvent
